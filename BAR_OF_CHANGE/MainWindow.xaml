@@ -1,0 +1,123 @@
+﻿<Window x:Class="BAR_OF_CHANGE.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BAR_OF_CHANGE"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        WindowState="Maximized">
+    <Window.Resources>
+        <ResourceDictionary Source="Dictionary1.xaml" />
+    </Window.Resources>
+
+    <Grid ShowGridLines="false" Background="FloralWhite">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+
+
+
+        <StackPanel Orientation="Horizontal" Background="Wheat" Grid.ColumnSpan="3">
+
+        </StackPanel>
+        <TabControl TabStripPlacement="Top" BorderThickness="0" Grid.ColumnSpan="3">
+            <TabItem x:Name="Main" Style="{StaticResource TabPanel}"  Grid.Column="0" Header="ГЛАВНАЯ" >
+                <Grid ShowGridLines="false" Background="FloralWhite">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0" Margin="0,100,0,0">
+                        <TextBlock x:Name="Text1" Foreground="BurlyWood" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20">ПОЛОСА ПЕРЕМЕН</TextBlock>
+                        <Border BorderBrush="Black" BorderThickness="3" CornerRadius="5" HorizontalAlignment="Center">
+                            <ProgressBar x:Name="progressBarMain" Orientation="Vertical" Width="50" Height="700" Minimum="5" Maximum="100" Value="5"/>
+                        </Border>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button Template="{StaticResource Minus_but_temp}" Margin="0,20,10,0" Click="DecreaseProgress"/>
+                            <Button Template="{StaticResource Plus_but_temp}" Margin="10,20,0,0" Click="IncreaseProgress"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Grid.Column="1" Margin="0,30,0,0">
+                        <TextBox x:Name="Note_Title"  Width="300" BorderBrush="BurlyWood" BorderThickness="5" FontSize="30">ЗАГОЛОВОК</TextBox>
+                        <Grid>
+                            <TextBox x:Name="Note_Box" Style="{StaticResource NoteBox}" AcceptsReturn="True" FontSize="20" FontWeight="Bold" TextWrapping="Wrap" Height="1000" Padding="0,0,0,30" />
+                            <DatePicker x:Name="TaskDueDatePicker" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" FontSize="30" Background="Transparent" BorderBrush="Transparent" Foreground="Gray" IsHitTestVisible="True"/>
+                        </Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button x:Name="SaveNoteButton" Height="70" Width="150" Click="SaveNote">
+                                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center">СОХРАНИТЬ ЗАМЕТКУ</TextBlock>
+                            </Button>
+                            <Button x:Name="SaveTaskButton" Height="70" Width="150" Click="SaveTask">
+                                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center">СОХРАНИТЬ ЗАДАЧУ</TextBlock>
+                            </Button>
+                            <Button x:Name="Fix" Content="ЗАКРЕПИТЬ" Height="70" Width="150" Click="AddPinNote_Click"/>
+                            <Button x:Name="Load" Content="ЗАГРУЗИТЬ" Height="70" Width="150"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel  Grid.Row="1" Grid.Column="2" Margin="0,30,0,0">
+                        <TextBlock FontSize="30">ЗАКРЕПЛЕНО</TextBlock>
+                        <Border BorderBrush="BurlyWood" BorderThickness="3" Height="1000" Width="700" CornerRadius="3" Margin="0,10,0,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel x:Name="PinnedPanel" Grid.Column="0">
+
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+
+            </TabItem>
+            <TabItem x:Name="Notes" Style="{StaticResource TabPanel}" Grid.Column="1" Header="ЗАМЕТКИ">
+                <StackPanel x:Name="NotesPanel">
+                    
+                </StackPanel>
+            </TabItem>
+
+            <TabItem x:Name="Tasks" Style="{StaticResource TabPanel}" Grid.Column="1" Header="ЗАДАЧИ" >
+                <StackPanel x:Name="TasksPanel">
+                    
+                </StackPanel>
+
+            </TabItem>
+
+            <TabItem x:Name="Setting" Style="{StaticResource TabPanel}" Grid.Column="2" Header="НАСТРОЙКИ">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="500" Background="Beige">
+                    <TextBlock Text="Имя пользователя:" FontSize="30" FontWeight="Bold" Margin="0,10"/>
+                    <TextBlock x:Name="UserNameTextBlock" FontSize="30" />
+
+                    <TextBlock Text="ID пользователя:" FontSize="30" FontWeight="Bold" Margin="0,10"/>
+                    <TextBlock x:Name="UserIdTextBlock" FontSize="30" />
+
+                    <Button Content="Выйти из аккаунта" Width="300" Height="100" FontSize="30" Background="Tomato" Foreground="White" Margin="20,10,20,0" Click="LogoutButton_Click" />
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+
+
+    </Grid>
+</Window>

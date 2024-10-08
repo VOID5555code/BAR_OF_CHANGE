@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAR_OF_CHANGE", "BAR_OF_CHANGE\BAR_OF_CHANGE.csproj", "{97BF8971-B3E0-4FC2-8A05-43E1D509BBDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97BF8971-B3E0-4FC2-8A05-43E1D509BBDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97BF8971-B3E0-4FC2-8A05-43E1D509BBDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97BF8971-B3E0-4FC2-8A05-43E1D509BBDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97BF8971-B3E0-4FC2-8A05-43E1D509BBDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {92B44E72-FC74-448F-8AFD-25F3B6B83186}
+	EndGlobalSection
+EndGlobal
